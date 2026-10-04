@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!-- 声明文档语言为中文，浏览器才能更好地显示中文 -->
+<html lang="zh-CN" data-page-node-id="THjriWl3F67yTcsI6leR8r">
+<head data-page-node-id="8g8alvovXcGoKZ4eLPtIdh">
+  <!-- 字符编码，固定用 UTF-8，中文才不会乱码 -->
+  <meta charset="UTF-8" data-page-node-id="8HMgEz7UhHV6UM1FyiBAMt">
+  <!-- 让页面在手机和电脑上都能正常缩放 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="Ct5GtlHEa87wtYqaTx6SUm">
+  <!-- 浏览器标签页上显示的标题，可自行修改 -->
+  <title>我的个人主页</title>
+  <!-- 引入样式文件：路径用相对路径，双击本文件即可自动加载 -->
+  <link rel="stylesheet" href="style.css" data-page-node-id="pESYo6KGGLffS79IynTFkK">
+</head>
+
+<body data-page-node-id="afACSESB4jZ1zeNL6v2Jd5">
+
+  <!-- 主题切换按钮：固定右上角，点击在深/浅色间切换（不影响排版） -->
+  <button id="themeToggle" title="切换深 / 浅色">切换主题</button>
+
+  <!-- ============ 板块一：个人基本信息 ============ -->
+  <!-- header 是页面顶部区域，放头像 + 姓名 + 简介 + 联系方式 -->
+  <header class="profile" data-page-node-id="L8dpURvu9CA6mucQbKWKv8">
+    <!-- 头像上传区：默认显示 avatar.jpg；点击圆圈可上传/更换头像，刷新后保留 -->
+    <div class="avatar" id="avatarBox" title="点击上传 / 更换头像" data-page-node-id="6y2p2qdXhYxZNDAAuq6qb0">
+      <img class="avatar-img" id="avatarImg" src="avatar.jpg" alt="头像" data-page-node-id="1Z4ZcnfGM6QHD4DxkORpFM">
+      <input type="file" id="avatarInput" accept="image/*" hidden data-page-node-id="HkVt5G5QCd4LRjMAtVsGlX">
+    </div>
+    <div class="profile-info" data-page-node-id="Vw0HJCzS5vNE2OTfJZwdqo">
+      <!-- 【修改点 1】页面主标题：只改这一行的文字即可 -->
+      <h1 class="main-title" data-page-node-id="huxLqB3wH1yvqZAKaRX6wG">你好，我是吴佳敏</h1>
+      <!-- 副标题：学校 / 专业 · 一句话简介 -->
+      <p class="subtitle" data-page-node-id="fTN6d1NVIzF3PdBWuu7RQR">广东科技学院-智能科学与技术专业-一位对嵌入式感兴趣的学习者</p>
+      <!-- 联系方式：邮箱与 GitHub，按自己的真实信息替换 -->
+      <p class="contact" data-page-node-id="czgjMSLdLlso6JEbOY4EuZ">邮箱：example@email.com ｜ GitHub：github.com/yourname</p>
+    </div>
+  </header>
+
+  <!-- ============ 板块二：兴趣方向 ============ -->
+  <section class="block" data-page-node-id="T29xjQEumdONXXm6dBzMSG">
+    <h2 data-page-node-id="aHKjYo7x3hYSbS7QoicjUh">兴趣方向</h2>
+    <!-- tags 是一排小标签，想加兴趣就多复制一个 <span class="tag"> 即可 -->
+    <div class="tags" data-page-node-id="JTcV7GbQcsNUuuEuBTQ3nn">
+      <span class="tag" data-page-node-id="TIWjWNXLGhvyvaTCP7XBOZ">人工智能</span>
+      <span class="tag" data-page-node-id="UZJ3HWCGwIKhIZUxVGy37Q">前端开发</span>
+      <span class="tag" data-page-node-id="3cMqGPpBed97M0hHH9SApz">产品设计</span>
+      <span class="tag" data-page-node-id="WxCHeGuc0qUcCFk2gQXT6S">摄影</span>
+      <span class="tag" data-page-node-id="GdAfY20P5t88nOoZD5MHCP">写作</span>
+    </div>
+  </section>
+
+  <!-- ============ 板块三：3 个待做项目 ============ -->
+  <section class="block" data-page-node-id="saiwv8mQLhc6XCEPULYBLW">
+    <h2 data-page-node-id="yMSBeqewB5mMRUZBolHw3V">我想做的三个项目</h2>
+    <!-- cards 是三列卡片布局，每个 .card 就是一个项目 -->
+    <div class="cards" data-page-node-id="NJ6ONUfSaH4B2vovBA3FoW">
+      <div class="card" data-page-node-id="ATkSLYb7Ciylge3oA61dxY">
+        <h3 data-page-node-id="caI7vdVMDh4GUh6iRlzpqv">项目一：个人博客系统</h3>
+        <!-- 【修改点 3】项目简介文字：只改这一段描述即可 -->
+        <p data-page-node-id="3p3EAHHz4NMsGcf0SjBWUn">用纯静态页面搭建一个记录学习笔记的博客，支持分类和标签。</p>
+        <p class="meta" data-page-node-id="F412zfZHnEAbF1pELGIjVu">技术：HTML / CSS ｜ 状态：计划中</p>
+      </div>
+      <div class="card" data-page-node-id="hoddbTKPsj356EDuCcNuFQ">
+        <h3 data-page-node-id="sWzL1HUa876Gcitd6uIJBO">项目二：校园活动小程序</h3>
+        <p data-page-node-id="VC6LSaDrXMsnmdizYDwcEF">为校内社团活动做信息查询与报名入口，降低组织成本。</p>
+        <p class="meta" data-page-node-id="QL19Q3T4TSXMkbGHGBpOTs">技术：待定 ｜ 状态：计划中</p>
+      </div>
+      <div class="card" data-page-node-id="U6zUAopivgW71fGlDsPasR">
+        <h3 data-page-node-id="sMA4r2qejQjaHdJG1SW4my">项目三：数据可视化看板</h3>
+        <p data-page-node-id="km0ECuNnvDo6ckYoZFD2VX">把课程作业里的数据用图表直观呈现，练习前端图表能力。</p>
+        <p class="meta" data-page-node-id="Qp8OsMyR59zuNFCNTohBzI">技术：待定 ｜ 状态：计划中</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 板块四：技能卡片 ============ -->
+  <section class="block" data-page-node-id="fYeg7KgCk7IK8ZUHE4SQWx">
+    <h2 data-page-node-id="ytaPQsKliH4tlQePzaa9lj">技能卡片</h2>
+    <!-- skills 是四列技能卡片，每个 .skill-card 是一项技能 -->
+    <div class="skills" data-page-node-id="IQ8kUK0eDyKxtYmjEk2EM4">
+      <div class="skill-card" data-page-node-id="c5ETk6DGslTrjjMf7sT2US">
+        <h3 data-page-node-id="Rma1bqjqOKEyfNdQUPijq4">HTML / CSS</h3>
+        <p class="level" data-page-node-id="q3VmaZfZJmDns0yeUIurIz">熟练</p>
+        <!-- 进度条：把下面 width 的百分比改成你的熟练度 -->
+        <div class="bar" data-page-node-id="08m9sQmNhMa7dzHRDA6KcM"><span style="width:85%" data-page-node-id="dD7EA9VK11jllHHbXQkwGs"></span></div>
+      </div>
+      <div class="skill-card" data-page-node-id="kYGNat4YH3KNEQhm5LTRnW">
+        <h3 data-page-node-id="ktVq2htbUsxSYBb71kEqyD">JavaScript</h3>
+        <p class="level" data-page-node-id="fYd9ddnZnXeRX8kEVGyi2D">进阶</p>
+        <div class="bar" data-page-node-id="Vz877qWuXgQmCaNy04Sp1H"><span style="width:60%" data-page-node-id="UftXUfVRXxtE0ykmxBy71u"></span></div>
+      </div>
+      <div class="skill-card" data-page-node-id="73g4J11cwJsLPOpOb7RegK">
+        <h3 data-page-node-id="nXqHpAMwncw8pqnl0IKFHx">Python</h3>
+        <p class="level" data-page-node-id="CvaE9c34NqG6kVGNZVF9uB">初级</p>
+        <div class="bar" data-page-node-id="SZXjskILxH42ryjWbhDfaS"><span style="width:40%" data-page-node-id="GxJAkp3bOV9nEs7DiyAHpw"></span></div>
+      </div>
+      <div class="skill-card" data-page-node-id="Pn4ACeZOD7jC6sqMgBG3ck">
+        <h3 data-page-node-id="FCSrUxHdREN88TnRTfC7aW">UI 设计</h3>
+        <p class="level" data-page-node-id="ES7sKdsKtHODpvniTZ5z1x">初级</p>
+        <div class="bar" data-page-node-id="WScFLO4aYXzFBKkcooIYGp"><span style="width:35%" data-page-node-id="wNeyuwxY0SrxMfjSZwlv8F"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 板块五：作品区 ============ -->
+  <section class="block" data-page-node-id="mhZJnewiPfEJa3YDTSoD2I">
+    <h2 data-page-node-id="NyWWeCCGAlBaH40eOyb8HM">作品区</h2>
+    <!-- works 是三列作品网格，每个 .work 是一件作品 -->
+    <!-- 作品筛选：点击分类只显示对应作品；"全部"显示所有 -->
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">全部</button>
+      <button class="filter-btn" data-filter="课程设计作业">课程设计作业</button>
+      <button class="filter-btn" data-filter="竞赛项目">竞赛项目</button>
+      <button class="filter-btn" data-filter="练习 Demo">练习 Demo</button>
+    </div>
+    <div class="works" data-page-node-id="sUW9hrEMKFHwDEg1gbKHFb">
+      <div class="work" data-category="课程设计作业" data-page-node-id="q12BMh1strMU2uiugyp1xN">
+        <!-- thumb 是作品缩略图占位，用渐变色块代替图片 -->
+        <div class="thumb" data-page-node-id="jbmkEPWAGyMUXlH7GTTpsS">作品 1</div>
+        <h3 data-page-node-id="9UojXAnKeDIOISHPFRZmvZ">课程设计作业</h3>
+        <p data-page-node-id="TzWcR8SqmRRRywGR8FBXA0">简短说明一句话。</p>
+      </div>
+      <div class="work" data-category="竞赛项目" data-page-node-id="QoVcmhIIWoYvs44Qfu3VUi">
+        <div class="thumb" data-page-node-id="lOPeItBDMLWULyfGITVMX1">作品 2</div>
+        <h3 data-page-node-id="Ewi9KQugI2sKZh8QlN6Chl">竞赛项目</h3>
+        <p data-page-node-id="NLZFUqdH7kCRULmONWASMe">简短说明一句话。</p>
+      </div>
+      <div class="work" data-category="练习 Demo" data-page-node-id="Z6MQ5TwZpaG5mUosS4uHY0">
+        <div class="thumb" data-page-node-id="eDCP5GGSQq5HW2uHpIQlFc">作品 3</div>
+        <h3 data-page-node-id="AFGam85xk8Jz3QwFAkDq7H">练习 Demo</h3>
+        <p data-page-node-id="Fa7mujpNdyiiKkYX7K5xSG">简短说明一句话。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚：页面最底部的版权信息 -->
+  <footer class="footer" data-page-node-id="OuG7u7EWPOZIEsFYWCLgZA">
+    <p data-page-node-id="iklIwxeqtT9AuVJlL4VQDO">© 2026 我的个人主页 </p>
+  </footer>
+
+  <!-- 引入交互脚本：仅作加载器，不影响上面的结构与内容 -->
+  <script src="script.js"></script>
+
+</body>
+</html>

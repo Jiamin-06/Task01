@@ -1,0 +1,164 @@
+/* =========================================================
+   全局变量区：改这里可以统一调整整站配色与基础样式
+   变量用法：在下面用 var(--变量名) 引用，例如 var(--primary)
+   ========================================================= */
+:root{
+  --bg:#f5f7fa;          /* 页面整体背景色 */
+  --text:#1f2937;        /* 正文文字颜色 */
+  --primary:#1A56DB;     /* 主题色：标题、强调文字、进度条都用它 */
+  --card-bg:#ffffff;     /* 普通卡片/板块的背景色 */
+  --radius:12px;         /* 圆角大小，数值越大越圆 */
+  --space:24px;          /* 板块之间的间距 */
+}
+
+/* 基础重置：去掉浏览器默认的外边距，并统一盒模型
+   盒模型统一后，设置宽高时更容易算清楚，不会被内边距撑大 */
+*{margin:0;padding:0;box-sizing:border-box;}
+
+/* 页面主体样式 */
+body{
+  /* 字体优先用系统中文字体，避免引入外部字体导致加载失败 */
+  font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;                /* 行高，让文字不那么挤 */
+  padding:var(--space);           /* 页面四周留白 */
+}
+
+/* 让主要内容居中，并限制最大宽度，电脑端阅读最舒适 */
+.profile,.block,.footer{
+  max-width:900px;
+  margin:0 auto var(--space);     /* 上下的外边距：居中 + 板块间距 */
+}
+
+/* ============ 板块一：个人基本信息 ============ */
+.profile{
+  display:flex;                   /* 用弹性布局让头像和文字横向排列 */
+  align-items:center;             /* 垂直居中对齐 */
+  gap:24px;                       /* 头像与文字之间的间隔 */
+  background:var(--card-bg);
+  padding:32px;
+  border-radius:var(--radius);
+}
+/* 头像圆：用渐变背景 + 居中文字代替图片 */
+.avatar{
+  width:96px;height:96px;
+  border-radius:50%;              /* 50% 即为正圆 */
+  background:linear-gradient(135deg,var(--primary),#60a5fa);
+  color:#fff;font-size:40px;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;                  /* 不被压缩 */
+  cursor:pointer;                 /* 头像可点击上传 */
+}
+.avatar:hover{opacity:.92;}       /* 悬停轻微反馈，提示可点 */
+/* 上传后的头像图片：填满圆圈并裁切为正圆 */
+.avatar-img{
+  width:100%;height:100%;
+  border-radius:50%;
+  object-fit:cover;               /* 不变形，居中裁切 */
+  display:block;
+}
+.main-title{color:var(--primary);font-size:28px;}
+.subtitle{color:#6b7280;margin-top:4px;}
+.contact{color:#6b7280;font-size:14px;margin-top:8px;}
+
+/* ============ 各板块通用标题 ============ */
+.block{
+  background:var(--card-bg);
+  padding:28px 32px;
+  border-radius:var(--radius);
+}
+.block h2{color:var(--primary);margin-bottom:16px;font-size:22px;}
+
+/* ============ 板块二：兴趣标签 ============ */
+.tags{display:flex;flex-wrap:wrap;gap:10px;}  /* 一行排不下就自动换行 */
+.tag{
+  background:#eef2ff;color:var(--primary);
+  padding:6px 14px;border-radius:999px;font-size:14px;  /* 999px 做出胶囊形状 */
+}
+
+/* ============ 板块三：项目卡片 ============ */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}  /* 三列等宽 */
+.card{
+  background:#f9fafb;border:1px solid #e5e7eb;
+  padding:18px;border-radius:var(--radius);
+}
+.card h3{font-size:16px;margin-bottom:8px;}
+.card p{font-size:14px;color:#4b5563;}
+.card .meta{margin-top:10px;color:#9ca3af;font-size:12px;}  /* 灰色小字：技术/状态 */
+
+/* ============ 板块四：技能卡片 ============ */
+.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}  /* 四列 */
+.skill-card{
+  /* 【修改点 2】技能卡片背景色：只改下面这个 --skill-bg 的值即可换颜色
+     例如改成 #e0f2fe 就是浅蓝色，改成 #fef3c7 就是浅黄色 */
+  --skill-bg:#eef2ff;
+  background:var(--skill-bg);
+  padding:18px;border-radius:var(--radius);text-align:center;
+}
+.skill-card h3{font-size:15px;}
+.skill-card .level{color:var(--primary);font-size:13px;margin:6px 0 10px;}
+/* 进度条外框 */
+.bar{background:#dbeafe;border-radius:999px;height:8px;overflow:hidden;}
+/* 进度条内填充：宽度由 HTML 里的 width 控制 */
+.bar span{display:block;height:100%;background:var(--primary);}
+
+/* ============ 板块五：作品区 ============ */
+.works{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}  /* 三列 */
+.work{
+  background:#f9fafb;border:1px solid #e5e7eb;
+  border-radius:var(--radius);overflow:hidden;  /* 让缩略图圆角不被溢出 */
+}
+/* 缩略图占位：渐变色块，后续可换成真实图片 */
+.thumb{
+  height:120px;background:linear-gradient(135deg,#c7d2fe,#93c5fd);
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:18px;
+}
+.work h3{font-size:15px;margin:12px 14px 4px;}
+.work p{font-size:13px;color:#6b7280;margin:0 14px 14px;}
+
+/* ============ 页脚 ============ */
+.footer{text-align:center;color:#9ca3af;font-size:13px;}
+
+/* ============ 主题切换按钮（新增，固定右上角，不改变排版）============ */
+#themeToggle{
+  position:fixed;top:16px;right:16px;z-index:10;   /* 脱离文档流，不挤动其他元素 */
+  padding:8px 14px;border:none;border-radius:999px;
+  background:var(--primary);color:#fff;font-size:14px;cursor:pointer;
+}
+#themeToggle:hover{opacity:.9;}
+
+/* ============ 深色模式（仅新增颜色规则，不改动布局）============ */
+/* 覆盖 :root 里的主色变量；其余硬编码颜色在下方的 html.dark 选择器里补充 */
+html.dark{
+  --bg:#0f172a;          /* 页面深色背景 */
+  --text:#e5e7eb;        /* 浅色正文 */
+  --card-bg:#1e293b;     /* 深色卡片 */
+  --primary:#60a5fa;     /* 深色下更亮的蓝，保证标题可读 */
+}
+html.dark .subtitle,
+html.dark .contact,
+html.dark .card p,
+html.dark .work p{color:#9ca3af;}     /* 次要文字调亮 */
+html.dark .meta{color:#64748b;}
+html.dark .card{background:#243044;border-color:#334155;}
+html.dark .work{background:#243044;border-color:#334155;}
+html.dark .skill-card{--skill-bg:#243044;}   /* 复用已有的局部变量 */
+html.dark .bar{background:#334155;}
+html.dark .thumb{background:linear-gradient(135deg,#334155,#475569);}
+html.dark .tag{background:#334155;}
+html.dark .footer{color:#64748b;}
+
+/* ============ 作品筛选（新增，仅作用于作品区）============ */
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px;}
+.filter-btn{
+  padding:6px 14px;border:1px solid #e5e7eb;border-radius:999px;
+  background:#fff;color:#4b5563;font-size:14px;cursor:pointer;
+}
+.filter-btn:hover{border-color:var(--primary);color:var(--primary);}
+.filter-btn.active{background:var(--primary);color:#fff;border-color:var(--primary);}
+/* 深色模式下的筛选按钮配色 */
+html.dark .filter-btn{background:#243044;color:#9ca3af;border-color:#334155;}
+html.dark .filter-btn:hover{color:#60a5fa;}
+html.dark .filter-btn.active{background:#60a5fa;color:#0f172a;border-color:#60a5fa;}
